@@ -3,6 +3,8 @@ import styled from "styled-components";
 import PangImage from '../assets/ggompang.jpeg'
 import {Button} from "reactstrap";
 import { useNavigate } from 'react-router-dom';
+import Wrapper from "./common/Wrapper";
+import Title from "./common/Title";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -28,16 +30,6 @@ const Home = () => {
 
 export default Home;
 
-const Wrapper = styled.main`
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: -100px;
-`
-
 const Header = styled.header`
   font-size: 40px;
   display: flex;
@@ -51,11 +43,6 @@ const Contents = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
-
-const Title = styled.div`
-  font-size: 30px;
-  margin-top: 20px;
 `
 
 const LogoImage = styled.div`
