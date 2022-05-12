@@ -47,7 +47,7 @@ const Question = () => {
         }
 
         setPage((prev) => prev + 1);
-    }, [type, totalScore, page, navigate]);
+    }, [totalScore, page, navigate]);
 
     useEffect(() => {
         console.log(totalScore);
