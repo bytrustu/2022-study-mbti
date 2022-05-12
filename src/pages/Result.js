@@ -1,16 +1,19 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import styled from "styled-components";
 import {useNavigate, useSearchParams} from 'react-router-dom';
 import Wrapper from "./common/Wrapper";
 import Title from "./common/Title";
 import { ResultData } from "../assets/data/resultdata";
 import LogoImage from "./common/LogoImage";
+import KakaoShareButton from "./common/KakaoShareButton";
 
 const Result = () => {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
+
     const mbti = searchParams.get('mbti');
     const [result, setResult] = useState({});
+    const title = useMemo(() => `예비 집사님과 찰떡궁합인 고양이는 ${result.name} 입니다.`, [result]);
 
     const handleClickButton = () => {
         navigate('/');
@@ -31,7 +34,10 @@ const Result = () => {
                     <p>예비 집사님과 찰떡궁합인 고양이는 <strong style={{ color: '#322923', fontSize: '22px' }}>{result.name}</strong> 입니다.</p>
                     <p>{result.desc}</p>
                 </Desc>
-                <Button className="mt-2" onClick={handleClickButton}>테스트 다시하기</Button>
+                <ButtonGroup>
+                    <Button className="mt-2" onClick={handleClickButton}>테스트 다시하기</Button>
+                    <KakaoShareButton image={result.image} desc={title} />
+                </ButtonGroup>
             </Contents>
         </Wrapper>
     );
@@ -75,5 +81,14 @@ const Button = styled.button`
   padding: 0.375rem 0.75rem;
   cursor: pointer;
   height: 40px;
+`
+
+const ButtonGroup = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  & > * + * {
+    margin-left: 10px;
+  }
 `
 
