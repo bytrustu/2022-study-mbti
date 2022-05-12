@@ -1,7 +1,6 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import styled from 'styled-components';
 import Wrapper from "./common/Wrapper";
-import {ProgressBar, Button} from 'react-bootstrap'
 import Title from "./common/Title";
 import {QuestionData} from '../assets/data/questiondata'
 import {createSearchParams, useNavigate} from "react-router-dom";
@@ -55,7 +54,7 @@ const Question = () => {
 
     return (
         <Wrapper>
-            <ProgressBar striped variant="danger" now={(page / QuestionData.length) * 100} style={{marginTop: '20px', width: '100%'}}/>
+            <progress max="100" value={(page / QuestionData.length) * 100} style={{marginTop: '20px', width: '100%'}} />
             <Title>{id}번.<br />{title}</Title>
             <ButtonGroup>
                 <StyledButton onClick={() => { onClickAnswer(type, 1); }}>{answera}</StyledButton>
@@ -76,10 +75,16 @@ const ButtonGroup = styled.div`
   margin-top: 20px;
 `
 
-const StyledButton = styled(Button).attrs({ className: 'btn-success' })`
+const StyledButton = styled.button`
   width: 40%;
   min-height: 200px;
-  font-size: 28px;
+  font-size: 24px;
+  color: #fff;
+  background-color: #198754;
+  border-radius: 0.25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
 
   & + & {
     margin-left: 16px;
