@@ -51,5 +51,5 @@ const LogoImage = styled.div`
 
 const Desc = styled.div`
   font-size: 20px;
-  margin-top: 20px;
+  margin-top: 26px;
 `
