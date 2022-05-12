@@ -10,7 +10,7 @@ const KakaoShareButton = ({ image, desc }) => {
         Kakao.Link.sendDefault({
             objectType: 'feed',
             content: {
-                title: '예비집사 판별기 결과',
+                title: '😼예비집사 판별기 결과😼',
                 description: desc,
                 imageUrl: url + image,
                 link: {
@@ -31,9 +31,8 @@ const KakaoShareButton = ({ image, desc }) => {
     };
 
     useEffect(() => {
-        Kakao.cleanup();
         Kakao.init('93a4390e4d458bb507b45d0bdadf6221');
-    }, [])
+    }, []);
     return (
         <Button onClick={shareKakao}>카카오톡 공유하기</Button>
     );
