@@ -19,7 +19,7 @@ const Home = () => {
             <Contents>
                 <Title>나에게 맞는 주인님은?</Title>
                 <LogoImage>
-                    <img src={PangImage} className="rounded-circle" width={350} height={350} />
+                    <img src={PangImage} className="rounded-circle" width={350} height={350}  alt="시작 이미지" />
                 </LogoImage>
                 <Desc>MBTI를 기반으로 하는 나랑 잘맞는 고양이 찾기!!</Desc>
                 <Button className="mt-2" onClick={handleClickButton}>테스트 시작하기</Button>

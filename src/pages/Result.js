@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import styled from "styled-components";
-import PangImage from '../assets/ggompang.jpeg'
 import {Button} from "reactstrap";
 import {useNavigate, useSearchParams} from 'react-router-dom';
 import Wrapper from "./common/Wrapper";
@@ -28,7 +27,7 @@ const Result = () => {
             <Contents>
                 <Title>결과보기</Title>
                 <LogoImage>
-                    <img src={result.image} className="rounded-circle" width={350} height={350} />
+                    <img src={result.image} className="rounded-circle" width={350} height={350}  alt="결과 이미지" />
                 </LogoImage>
                 <Desc>
                     예비 집사님과 찰떡궁합인 고양이는 <strong style={{ color: '#322923', fontSize: '22px' }}>{result.name}</strong> 입니다.
