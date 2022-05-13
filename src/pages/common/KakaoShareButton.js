@@ -31,6 +31,7 @@ const KakaoShareButton = ({ image, desc }) => {
     };
 
     useEffect(() => {
+        Kakao.cleanup();
         Kakao.init('93a4390e4d458bb507b45d0bdadf6221');
     }, []);
     return (
